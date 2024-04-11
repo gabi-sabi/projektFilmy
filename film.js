@@ -128,7 +128,8 @@ note.addEventListener('submit', (event) => {
   }
   if (checkBox.checked === false) {
     document.querySelector('#terms-checkbox').classList.add('is-invalid');
-  } else {
+  }
+  if (text.value.length !== 0 && checkBox.checked === true) {
     note.innerHTML = `<p class="card-text">${text.value}</p>`;
   }
 });

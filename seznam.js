@@ -111,9 +111,9 @@ console.log(seznamFilmu);
 
 filmy.forEach((film) => {
   seznamFilmu.innerHTML += `
-	<div class="col">
-  <div class="card">
-    <img
+  <div class="col">
+		<div class="card">  
+			<img
       src=${film.plakat.url}
       width="780"
       height="520"
@@ -125,7 +125,7 @@ filmy.forEach((film) => {
       <p class="card-text">${film.ochutnavka}</p>
       <a href="film.html#${film.id}" class="btn btn-primary">Přehrát</a>
     </div>
-  </div>
+	</div>
 </div>
   `;
 });

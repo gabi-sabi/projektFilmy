@@ -16,16 +16,17 @@ HTML ikonky hamburgeru: <i class="fas fa-bars"></i>*/
 
 const menuChange = () => {
   const menuPolozky = document.querySelector("#menu-polozky");
-  const menuTlacitko = document.querySelector("#menu-tlacitko");
+  const menuIcon = document.querySelector("#menu-tlacitko .fas");
 
   menuPolozky.classList.toggle("show");
 
+
   if (menuPolozky.classList.contains("show")) {
-    menuTlacitko.classList.remove("fa-bars");
-    menuTlacitko.classList.add("fa-xmark");
+    menuIcon.classList.remove("fa-bars");
+    menuIcon.classList.add("fa-xmark");
   } else {
-    menuTlacitko.classList.remove("fa-xmark");
-    menuTlacitko.classList.add("fa-bars");
+    menuIcon.classList.remove("fa-xmark");
+    menuIcon.classList.add("fa-bars");
   }
 }
 

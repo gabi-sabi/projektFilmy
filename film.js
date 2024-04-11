@@ -105,17 +105,6 @@ const filmy = [
   },
 ];
 
-/*Umožněte uživateli vyplněním formuláře přidat k filmu vlastní poznámku.
-
-V souboru film.js pomocí document.querySelector najděte prvek s id note-form.
-
-Při pokusu o odeslání tohoto formuláře zamezte výchozí chování prohlížeče.
-
-Ověřte, že uživatel do textového pole, prvku s id message-input něco napsal. Pokud ne, přidejte prvku třídu is-invalid, která ho zvýrazní červeně.
-
-Pokud uživatel něco napsal, ověřte, že souhlasil s podmínkami, že zaškrtl políčko s id terms-checkbox. Pokud nezaškrtl, přidejte políčku třídu is-invalid
-
-Pokud uživatel splnil obě podmínky z kroků výše, nahraďte HTML obsah formuláře za odstavec <p class="card-text">…</p> s textem z textového pole.*/
 
 const note = document.querySelector('#note-form');
 
@@ -133,3 +122,37 @@ note.addEventListener('submit', (event) => {
     note.innerHTML = `<p class="card-text">${text.value}</p>`;
   }
 });
+
+//hash - acticle.js podstránka
+const filmId = window.location.hash.slice(1);
+const filmData = filmy.find((film) => film.id === filmId);
+
+//hash = index.js hlavní
+
+const detailFilmu = document.querySelector("#detail-filmu");
+
+detailFilmu.innerHTML += `
+    <div class="row g-0">
+      <div class="col-md-5">
+        <img
+          src="${filmData.plakat.url}"
+          alt="plakát"
+          class="img-fluid rounded-start"
+          width="663"
+          height="909"
+        />
+      </div>
+      <div class="col-md-7">
+        <div class="card-body">
+          <h5 class="card-title">${filmData.nazev}</h5>
+          <p class="card-text">${filmData.popis}</p>
+          <p class="card-text">
+            <small class="text-muted" id="${filmData.premiera}"
+              >Premiéra <strong>24. prosince 2022</strong>, což je za 24
+              dní.</small
+            >
+          </p>
+        
+  <a href="films.html#{film.id}"></a>
+  `
+
